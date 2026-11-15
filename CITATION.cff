@@ -7,7 +7,7 @@ authors:
   - family-names: "Çetin"
     given-names: "Behiç"
     orcid: "https://orcid.org/0000-0002-8926-2394"
-version: "2.0.0"
+version: "2.0.1"
 doi: "10.5281/zenodo.24248757"
 identifiers:
   - type: doi

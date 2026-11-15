@@ -40,7 +40,7 @@ Kodlama Masası'nı kullandıysanız lütfen kaynak gösterin. Araçtaki **Atıf
 
 If you use Coding Desk, please cite it. The **Cite** button in the tool provides APA, ISNAD and BibTeX formats.
 
-> Çetin, B. (2026). *Kodlama Masası* (Sürüm 2.0.0) [Bilgisayar yazılımı]. Zenodo. https://doi.org/10.5281/zenodo.24248757
+> Çetin, B. (2026). *Kodlama Masası* (Sürüm 2.0.1) [Bilgisayar yazılımı]. Zenodo. https://doi.org/10.5281/zenodo.24248757
 
 - DOI, sürüm 2.0.0 / version 2.0.0: [10.5281/zenodo.24248757](https://doi.org/10.5281/zenodo.24248757)
 - DOI, tüm sürümler / all versions: [10.5281/zenodo.24248756](https://doi.org/10.5281/zenodo.24248756)
