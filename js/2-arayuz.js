@@ -211,7 +211,9 @@ function cizGiris(){const g=k=>tAlt('giris',k),p=P(),dolu=p.belgeler.length>0;
       <div><h2 class="text-2xl font-semibold mb-4">${esc(g('guvenBaslik'))}</h2><div class="space-y-3 text-base-content/80 leading-relaxed">${(g('guven')||[]).map(x=>`<p>${esc(x)}</p>`).join('')}</div></div>
     </div>
     <div class="bg-base-100 border border-base-300 rounded-box p-6 flex flex-wrap items-center gap-4"><p class="font-semibold text-lg flex-1 min-w-48">${esc(g('basla'))}</p><div class="flex flex-wrap gap-2">${dugme('yeni',t('newProject'),'btn-primary')}${dugme('ornek',t('loadSample'),'btn-outline')}${dugme('ac',t('openProject'),'btn-ghost')}</div></div>
+    ${girisAtifHtml()}
   </div>`;
+  $$('[data-gkop]').forEach(b=>b.onclick=()=>kopyala(atifMetinleri()[b.dataset.gkop]));
   $$('[data-garac]').forEach(b=>b.onclick=async()=>{const a=b.dataset.garac;
     if(a==='devam'){sekmeAc('kod');return}
     if(a==='atif'){atifPencere();return}

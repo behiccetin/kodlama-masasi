@@ -1,12 +1,14 @@
 /* ====================== ATIF VE YÖNTEM METNİ ====================== */
 const DEPO='https://github.com/behiccetin/kodlama-masasi';
-const DOI='';
+const DOI='10.5281/zenodo.24248757';
+const DOI_TUM='10.5281/zenodo.24248756';
 const KAYNAK_URL=DOI?'https://doi.org/'+DOI:DEPO;
 const ga=(grup,k)=>tAlt(grup,k);
 function atifMetinleri(){const tr=S.dil==='tr';const y=ga('atif','yazilim'),sv=ga('atif','surum');
-  return {apa:`Çetin, B. (2026). Kodlama Masası (${sv} ${SURUM}) [${y}]. ${KAYNAK_URL}`,
-    isnad:`Çetin, Behiç. Kodlama Masası. ${sv} ${SURUM}. ${y}. 2026. ${KAYNAK_URL}`,
-    bibtex:`@software{cetin2026kodlama,\n  author = {Çetin, Behiç},\n  title = {Kodlama Masası},\n  year = {2026},\n  version = {${SURUM}},\n  url = {${DEPO}}${DOI?`,\n  doi = {${DOI}}`:''}\n}`}}
+  const yay=DOI?'Zenodo. ':'';
+  return {apa:`Çetin, B. (2026). Kodlama Masası (${sv} ${SURUM}) [${y}]. ${yay}${KAYNAK_URL}`,
+    isnad:`Çetin, Behiç. Kodlama Masası. ${sv} ${SURUM}. ${y}. ${DOI?'Zenodo, ':''}2026. ${KAYNAK_URL}`,
+    bibtex:`@software{cetin2026kodlama,\n  author = {Çetin, Behiç},\n  title = {Kodlama Masası},\n  year = {2026},\n  version = {${SURUM}},\n  publisher = {Zenodo},\n  url = {${KAYNAK_URL}}${DOI?`,\n  doi = {${DOI}}`:''}\n}`}}
 const YONTEM_KAYNAK=['Cohen, J. (1960). A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1), 37-46. https://doi.org/10.1177/001316446002000104',
   'Krippendorff, K. (2004). Content analysis: An introduction to its methodology (2nd ed.). Sage.',
   'Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for categorical data. Biometrics, 33(1), 159-174. https://doi.org/10.2307/2529310',
@@ -42,6 +44,17 @@ function uyumAciklamaHtml(u){if(!u)return '';const g=k=>ga('aciklama',k);const y
     </div><p class="text-sm bg-base-100 border-l-4 border-primary rounded-field p-3">${esc(g('hangisi'))}</p></div></details>`}
 async function kopyala(m){try{await navigator.clipboard.writeText(m);tost(t('copied'))}catch(e){const a=document.createElement('textarea');a.value=m;document.body.appendChild(a);a.select();try{document.execCommand('copy');tost(t('copied'))}catch(_){}a.remove()}}
 function atifPencere(){const a=atifMetinleri();const blok=(k,v)=>`<div class="mt-4"><div class="flex items-center justify-between"><h4 class="text-sm font-semibold">${esc(ga('atif',k))}</h4><button class="btn btn-xs" data-kop="${k}">${esc(ga('atif','kopyala'))}</button></div><pre class="mt-1 bg-base-200 rounded-field p-3 text-sm whitespace-pre-wrap break-words font-mono">${esc(v)}</pre></div>`;
-  pencere(ga('atif','baslik'),`<p class="text-sm text-base-content/75">${esc(ga('atif','ne'))}</p>${blok('apa',a.apa)}${blok('isnad',a.isnad)}${blok('bibtex',a.bibtex)}`,null,{acilinca:()=>$$('[data-kop]').forEach(b=>b.onclick=()=>kopyala(a[b.dataset.kop]))})}
+  pencere(ga('atif','baslik'),`<p class="text-sm text-base-content/75">${esc(ga('atif','ne'))}</p>${doiSatiri()}${blok('apa',a.apa)}${blok('isnad',a.isnad)}${blok('bibtex',a.bibtex)}`,null,{acilinca:()=>$$('[data-kop]').forEach(b=>b.onclick=()=>kopyala(a[b.dataset.kop]))})}
 function cizYontemKart(){const k=$('#yontemKart');if(!k)return;const L=yontemMetni();
   k.innerHTML=`<div class="space-y-3 text-sm leading-relaxed">${L.map(x=>`<p>${esc(x)}</p>`).join('')}</div><h4 class="font-semibold text-sm mt-5">${esc(ga('yontem','kaynakca'))}</h4><ul class="text-sm space-y-1 mt-1 text-base-content/80">${kaynakcaListesi().map(x=>`<li class="pl-6 -indent-6">${esc(x)}</li>`).join('')}</ul>`}
+
+/* DOI satırı: sürüm DOI'si ve tüm sürümler DOI'si */
+function doiSatiri(){if(!DOI)return '';const l=(d,ad)=>`<a class="link link-primary font-mono" href="https://doi.org/${d}" target="_blank" rel="noopener noreferrer">${esc(d)}</a><span class="text-base-content/60"> ${esc(ad)}</span>`;
+  return `<div class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm"><span><span class="badge badge-primary badge-sm mr-2">DOI</span>${l(DOI,ga('atif','buSurum').replace('{0}',SURUM))}</span><span>${l(DOI_TUM,ga('atif','tumSurum'))}</span></div>`}
+/* ana sayfanın en altındaki atıf bölümü */
+function girisAtifHtml(){const a=atifMetinleri();
+  return `<section class="border-t border-base-300 pt-10 grid lg:grid-cols-[16rem_minmax(0,1fr)] gap-6"><h2 class="text-2xl font-semibold">${esc(ga('atif','baslik'))}</h2>
+    <div class="max-w-3xl"><p class="text-base-content/80 leading-relaxed">${esc(ga('atif','ne'))}</p>${doiSatiri()}
+    <div class="mt-4 bg-base-100 border border-base-300 rounded-box p-4"><div class="flex items-center justify-between gap-3"><h3 class="text-sm font-semibold">${esc(ga('atif','apa'))}</h3><button class="btn btn-xs" data-gkop="apa">${esc(ga('atif','kopyala'))}</button></div>
+    <p class="mt-2 text-sm leading-relaxed pl-6 -indent-6 break-words">${esc(a.apa)}</p></div>
+    <button class="btn btn-sm btn-ghost mt-3" data-garac="atif">${esc(ga('atif','digerBicim'))}</button></div></section>`}
