@@ -1,0 +1,102 @@
+@import "tailwindcss" source(none);
+@source "./sablon.html";
+@source "./js";
+@plugin "daisyui" { themes: false; }
+
+@plugin "daisyui/theme" {
+  name: "masa";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f4f5f9;
+  --color-base-300: #e4e6ee;
+  --color-base-content: #1e2134;
+  --color-primary: #3b2a8f;
+  --color-primary-content: #ffffff;
+  --color-secondary: #0f766e;
+  --color-secondary-content: #ffffff;
+  --color-accent: #9a5b13;
+  --color-accent-content: #ffffff;
+  --color-neutral: #2a2d45;
+  --color-neutral-content: #f4f5f9;
+  --color-info: #2563eb;
+  --color-info-content: #ffffff;
+  --color-success: #15803d;
+  --color-success-content: #ffffff;
+  --color-warning: #b45309;
+  --color-warning-content: #ffffff;
+  --color-error: #b91c1c;
+  --color-error-content: #ffffff;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.625rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "masa-gece";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #171a29;
+  --color-base-200: #1f2236;
+  --color-base-300: #2d3149;
+  --color-base-content: #e5e6f0;
+  --color-primary: #ab9dff;
+  --color-primary-content: #19133f;
+  --color-secondary: #5eead4;
+  --color-secondary-content: #062b27;
+  --color-accent: #f5b461;
+  --color-accent-content: #2b1903;
+  --color-neutral: #0f1120;
+  --color-neutral-content: #e5e6f0;
+  --color-info: #7cb3ff;
+  --color-info-content: #0b1a33;
+  --color-success: #6ee7a0;
+  --color-success-content: #05240f;
+  --color-warning: #fbbf6a;
+  --color-warning-content: #2b1903;
+  --color-error: #ff8a8a;
+  --color-error-content: #300808;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.625rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@layer base {
+  html,body{height:100%}
+  .metin-serif { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Cambria, Georgia, serif; }
+}
+
+.okuyucu{white-space:pre-wrap;overflow-wrap:break-word;font-size:1.0625rem;line-height:1.85;max-width:70ch}
+.okuyucu ::selection{background:color-mix(in oklab,var(--color-primary) 30%,transparent)}
+.isaret{border-radius:2px;cursor:pointer;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.isaret.vurgu{outline:2px solid var(--color-base-content);outline-offset:1px}
+.isaret.parla{animation:parla 1.2s ease-out 2}
+@keyframes parla{50%{outline:3px solid var(--color-primary);outline-offset:3px}}
+.serit{position:absolute;width:5px;border-radius:3px;cursor:pointer}
+.serit:hover{width:7px}
+.serit-ad{position:absolute;font-size:.72rem;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;color:color-mix(in oklab,var(--color-base-content) 72%,transparent);cursor:pointer}
+.serit-ad:hover{color:var(--color-base-content)}
+.kutu-acilir{position:fixed;z-index:60;width:19rem}
+.isi{background:color-mix(in oklab,var(--color-primary) var(--y),transparent)}
+.isi[data-k="1"]{color:var(--color-primary-content)}
+.cubuk{height:.5rem;border-radius:999px;background:var(--color-primary)}
+.kod-nokta{width:.75rem;height:.75rem;border-radius:3px;flex:none;display:inline-block}
+.ipucu-metin p+p{margin-top:.5rem}
+.ipucu-metin ol{list-style:decimal;padding-left:1.25rem;margin:.5rem 0}
+.ipucu-metin ul{list-style:disc;padding-left:1.25rem;margin:.5rem 0}
+.ipucu-metin li+li{margin-top:.15rem}
+.surukle-hedef{outline:2px dashed var(--color-primary);outline-offset:-2px;border-radius:var(--radius-field)}
+.harita-svg text{font-family:inherit}
+@media (prefers-reduced-motion:reduce){.isaret.parla{animation:none}}
+@media print{.yazdirma{display:none!important}}

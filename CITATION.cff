@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Bu yazılımı kullandıysanız lütfen aşağıdaki gibi kaynak gösterin. / If you use this software, please cite it as below."
+type: software
+title: "Kodlama Masası"
+abstract: "Görüşme dökümleri, açık uçlu anket yanıtları ve belgeler için tarayıcıda çalışan, kurulumsuz, ücretsiz nitel kodlama aracı. İçerik analizi ve tematik analiz için kodlama, alıntı toplama, kod sıklığı ve matrisleri, kod haritası, kodlayıcılar arası uyum (Miles-Huberman, Cohen kappa, Krippendorff alfa), Word raporu ve REFI-QDA (.qdpx) alışverişi sunar. / A free, install-free, browser-based qualitative coding tool."
+authors:
+  - family-names: "Çetin"
+    given-names: "Behiç"
+    orcid: "https://orcid.org/0000-0002-8926-2394"
+version: "2.0.0"
+date-released: "2026-11-15"
+license: MIT
+repository-code: "https://github.com/behiccetin/kodlama-masasi"
+url: "https://behiccetin.github.io/kodlama-masasi/"
+keywords:
+  - nitel analiz
+  - qualitative data analysis
+  - CAQDAS
+  - içerik analizi
+  - content analysis
+  - intercoder reliability
+  - Cohen kappa
+  - Krippendorff alpha
+  - REFI-QDA
