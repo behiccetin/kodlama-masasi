@@ -1,5 +1,7 @@
 # Kodlama Masası / Coding Desk
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24248757.svg)](https://doi.org/10.5281/zenodo.24248757)
+
 Görüşme dökümleri, açık uçlu anket yanıtları ve belgeler için tarayıcıda çalışan, kurulumsuz, ücretsiz nitel kodlama aracı. Tek bir HTML dosyasıdır; internet bağlantısı kullanmaz, veriler bilgisayardan çıkmaz.
 
 A free, install-free qualitative coding tool for interview transcripts, open-ended survey answers and documents. It is a single HTML file, works offline, and data never leaves your computer.
@@ -38,7 +40,10 @@ Kodlama Masası'nı kullandıysanız lütfen kaynak gösterin. Araçtaki **Atıf
 
 If you use Coding Desk, please cite it. The **Cite** button in the tool provides APA, ISNAD and BibTeX formats.
 
-> Çetin, B. (2026). *Kodlama Masası* (Sürüm 2.0.0) [Bilgisayar yazılımı]. https://github.com/behiccetin/kodlama-masasi
+> Çetin, B. (2026). *Kodlama Masası* (Sürüm 2.0.0) [Bilgisayar yazılımı]. Zenodo. https://doi.org/10.5281/zenodo.24248757
+
+- DOI, sürüm 2.0.0 / version 2.0.0: [10.5281/zenodo.24248757](https://doi.org/10.5281/zenodo.24248757)
+- DOI, tüm sürümler / all versions: [10.5281/zenodo.24248756](https://doi.org/10.5281/zenodo.24248756)
 
 ## Lisans / License
 

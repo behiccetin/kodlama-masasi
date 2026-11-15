@@ -8,6 +8,14 @@ authors:
     given-names: "Behiç"
     orcid: "https://orcid.org/0000-0002-8926-2394"
 version: "2.0.0"
+doi: "10.5281/zenodo.24248757"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24248756"
+    description: "Tüm sürümler / All versions (concept DOI)"
+  - type: doi
+    value: "10.5281/zenodo.24248757"
+    description: "Sürüm 2.0.0 / Version 2.0.0"
 date-released: "2026-11-15"
 license: MIT
 repository-code: "https://github.com/behiccetin/kodlama-masasi"
