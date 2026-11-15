@@ -1,7 +1,7 @@
 /* Kodlama Masası · Öğr. Gör. Dr. Behiç ÇETİN · MIT Lisansı */
 
 /* ====================== DURUM ====================== */
-const SURUM='2.0.0';
+const SURUM='2.0.1';
 const KAYIT='kodlamaMasasi.v1';
 const RENKLER=['#F5C518','#FF8FA3','#7BD389','#6EC5FF','#C49BFF','#FFA552','#4FD1C5','#F28482','#A3E635','#93A5FF','#E879F9','#D4A373'];
 const S={P:null,dil:'tr',sekme:'kod',belge:null,secKod:new Set(),noktaBolumler:null,secim:null,odakKod:null,kilit:false,kaydedildi:false};
@@ -92,7 +92,7 @@ function tost(m,tur='success'){const d=document.createElement('div');d.className
 function pencere(baslik,icerik,dugmeler,o={}){$('#pBaslik').textContent=baslik;$('#pYardim').innerHTML=o.ip?ip(o.ip):'';$('#pIcerik').innerHTML=icerik;const pd=$('#pDugmeler');pd.innerHTML='';
   $('#pencere .modal-box').classList.toggle('max-w-4xl',!!o.genis);$('#pencere .modal-box').classList.toggle('max-w-2xl',!o.genis);
   return new Promise(res=>{const dlg=$('#pencere');let sonuc=null;(dugmeler||[{ad:t('close'),d:null}]).forEach(b=>{const e=document.createElement('button');e.className='btn '+(b.c||'');e.textContent=b.ad;if(b.id)e.id=b.id;e.onclick=async()=>{if(b.f){const r=await b.f();if(r===false)return}sonuc=b.d;dlg.close()};pd.appendChild(e)});
-    dlg.onclose=()=>res(sonuc);dlg.showModal();if(o.acilinca)o.acilinca()})}
+    dlg.onclose=()=>{if(dlg.open)return;res(sonuc)};dlg.showModal();if(o.acilinca)o.acilinca()})}
 const sor=(m,evet,tehlike)=>pencere(t('project'),`<p>${esc(m)}</p>`,[{ad:t('cancel'),d:false},{ad:evet||'OK',d:true,c:tehlike?'btn-error':'btn-primary'}]);
 function indir(ad,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=ad;document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(a.href)},2000)}
 const dosyaAd=s=>(String(s||'proje').replace(/ı/g,'i').replace(/İ/g,'I').normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^\w-]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'').toLowerCase()||'proje');
