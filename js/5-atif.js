@@ -1,6 +1,6 @@
 /* ====================== ATIF VE YÖNTEM METNİ ====================== */
 const DEPO='https://github.com/behiccetin/kodlama-masasi';
-const DOI='10.5281/zenodo.24248757';
+const DOI='10.5281/zenodo.24249693';
 const DOI_TUM='10.5281/zenodo.24248756';
 const KAYNAK_URL=DOI?'https://doi.org/'+DOI:DEPO;
 const ga=(grup,k)=>tAlt(grup,k);
